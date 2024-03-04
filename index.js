@@ -14,19 +14,6 @@ const shuffle = (list) => {
     }
     return templist
 }
-const myarray = ["https://i.ibb.co/sjvVrG3/fruit-plyh.jpg",
-"https://i.ibb.co/g3tqj4w/fruit-zxcv.jpg", 
-"https://i.ibb.co/88Hy4rD/fruit-wert.jpg",
-"https://i.ibb.co/NmNMLKF/fruit-astt.jpg",
-"https://i.ibb.co/qp8Q1G6/fruit-dfgh.jpg",
-"https://i.ibb.co/9thfVhB/fruit-hjkl.jpg",
-"https://i.ibb.co/YtTfqvD/fruit-dcnj.jpg",
-"https://i.ibb.co/CVwKM8Z/fruit-ecuh.jpg",
-"https://i.ibb.co/ccNyKX0/fruit-uzxc.jpg"]
-
-let randomurls = shuffle(myarray) 
-console.log(randomurls)
-
 
 
 
@@ -69,6 +56,26 @@ console.log(randomurls)
 
 
     Step 4:
-    - Append an exclamation point (!) to the .textContent property of the h1 on the page
-
-*/
+    - Append an exclamation point (!) to the .textContent property of the h1 on the page*/
+    const urls = [
+        "https://i.ibb.co/sjvVrG3/fruit-plyh.jpg",
+        "https://i.ibb.co/g3tqj4w/fruit-zxcv.jpg",
+        "https://i.ibb.co/88Hy4rD/fruit-wert.jpg",
+        "https://i.ibb.co/NmNMLKF/fruit-astt.jpg",
+        "https://i.ibb.co/qp8Q1G6/fruit-dfgh.jpg",
+        "https://i.ibb.co/9thfVhB/fruit-hjkl.jpg",
+        "https://i.ibb.co/YtTfqvD/fruit-dcnj.jpg",
+        "https://i.ibb.co/CVwKM8Z/fruit-ecuh.jpg",
+        "https://i.ibb.co/ccNyKX0/fruit-uzxc.jpg",
+    ];
+    
+    randomUrls = shuffle(urls)
+    
+    images = document.querySelectorAll('.card img')
+    
+    for (let i = 0; i < images.length; i++) {
+        images[i].src = randomUrls[i]
+    }
+    
+    const h1 = document.querySelector('h1')
+    h1.textContent += '!'
